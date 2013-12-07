@@ -35,7 +35,7 @@ public class ServerAdmin {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                //createdb cdb=new createdb();
+                createdb cdb=new createdb();
             }
         });
  searchbtn.addActionListener(new ActionListener() {

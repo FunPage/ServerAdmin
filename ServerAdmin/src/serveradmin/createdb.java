@@ -3,51 +3,70 @@
  * and open the template in the editor.
  */
 package serveradmin;
+import Framework.sqlop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 /**
  *
  * @author sathyagriffin
  */
-public class createdb {
-    //class is used to create database
-    //Global variable decleration
-    JFrame container=new JFrame("Create Table");
-    JTextField Tabelname=new JTextField("enter the table name");
-    JTextField Databasename=new JTextField("enter the database name");
-    JButton create=new JButton("create");
-    void displayPanel()
+public class createdb extends JFrame
+{
+   /* Global parameter Decleration */
+    JTextField dbname=new JTextField("database name");
+    JTextField uname=new JTextField("Enter your username");
+    JTextField pass=new JTextField("Enter your password");
+    JButton submit=new JButton("create");
+    public void displaypanel()
     {
-    JLabel dbname=new JLabel("Enter the database name");
-    JLabel tblname=new JLabel("Enter the Table name");
-    dbname.setBounds(30,30,200,50);
-    Databasename.setBounds(30,80,200,50);
-    tblname.setBounds(30,140,200,50);
-    Tabelname.setBounds(30,200,200,50);
-    create.setBounds(140,260,80,40);
-    create.addActionListener(new ActionListener() {
+    JLabel label1=new JLabel("Database Name");
+    JLabel label2=new JLabel("Username");
+    JLabel label3=new JLabel("password");
+    //setting bounds for each element
+    label1.setBounds(30,30,200,50);
+    dbname.setBounds(30,90,200,50);
+    label2.setBounds(30,150,200,50);
+    uname.setBounds(30,210,200,50);
+    label3.setBounds(30,270,200,50);
+    pass.setBounds(30,330,200,50);
+    submit.setBounds(100,390,90,50);
+    submit.addActionListener(new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-           String strdbname=Databasename.getText();
-           String strtblname=Tabelname.getText();
-           CreateDBandTable(strdbname,strtblname);
+           String dname=dbname.getText();
+           String usr=uname.getText();
+           String pwd=pass.getText();
+           sqlop s=new sqlop();
+            try
+            {
+                s.createdbs(dname, usr, pwd);
+            } 
+            catch (SQLException ex) 
+            {
+               System.out.print(ex);
+            }
         }
     });
-    container.add(dbname);
-    container.add(tblname);
-    container.add(Databasename);
-    container.add(Tabelname);
-    container.add(create);
-    container.setSize(300,300);
-    container.setLayout(null);
-    container.setTitle("Create Table");
-    container.setVisible(true);
-    
+    add(label1);
+    add(label2);
+    add(label3);
+    add(dbname);
+    add(uname);
+    add(pass);
+    add(submit);
+    setTitle("Create Table");
+    setLayout(null);
+    setVisible(true);
+    setSize(500,500);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-    public void CreateDBandTable(String database,String table)
-    {
-    //to be continued
-    }
+createdb()
+{
+displaypanel();
+}
 }
