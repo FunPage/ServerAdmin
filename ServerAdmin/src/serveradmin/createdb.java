@@ -4,6 +4,7 @@
  */
 package serveradmin;
 import Framework.sqlop;
+import Framework.Errorpanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -49,6 +50,7 @@ public class createdb extends JFrame
             catch (SQLException ex) 
             {
                System.out.print(ex);
+               Errorpanel errorpanel = new Errorpanel();
             }
         }
     });
