@@ -42,7 +42,7 @@ public class ServerAdmin {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                throw new UnsupportedOperationException("Not supported yet.");
+               //searchdb sdb=new searchdb();
             }
         });
     updatebtn.addActionListener(new ActionListener() {
