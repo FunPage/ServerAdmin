@@ -64,7 +64,7 @@ public class createdb extends JFrame
     setTitle("Create Table");
     setLayout(null);
     setVisible(true);
-    setSize(500,500);
+    setSize(275,500);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 createdb()
