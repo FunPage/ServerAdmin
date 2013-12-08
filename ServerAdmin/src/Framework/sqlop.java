@@ -23,10 +23,9 @@ public class sqlop {
              try
              {
                  boolean bool=stmt.execute("create database "+databasename);
-                 if(bool)
-                 {
+          
                  System.exit(0);
-                 }
+                 
              }
              catch(Exception e)
              {

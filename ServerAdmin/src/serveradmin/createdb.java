@@ -3,14 +3,15 @@
  * and open the template in the editor.
  */
 package serveradmin;
-import Framework.sqlop;
 import Framework.Errorpanel;
+import Framework.sqlop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 /**
  *
  * @author sathyagriffin
