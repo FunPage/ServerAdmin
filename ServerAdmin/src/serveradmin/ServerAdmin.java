@@ -42,7 +42,7 @@ public class ServerAdmin {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                //searchdb sdb=new searchdb();
+                searchdb sdb=new searchdb();
             }
         });
     updatebtn.addActionListener(new ActionListener() {
