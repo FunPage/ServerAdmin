@@ -3,15 +3,16 @@
  * and open the template in the editor.
  */
 package serveradmin;
-import Framework.QueryLib;
+import Framework.*;
+import java.sql.SQLException;
 /**
  *
  * @author taggo
  */
 public class searchdb {
-    searchdb()
+    searchdb() throws SQLException, ClassNotFoundException
     {
-    QueryLib q=new QueryLib();
-    q.listenquery("jdbc:mysql://localhost:3306/", "show databases");
+        
     }
+        
 }

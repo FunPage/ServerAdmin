@@ -6,6 +6,9 @@ package serveradmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 /**
  *
@@ -42,7 +45,13 @@ public class ServerAdmin {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                searchdb sdb=new searchdb();
+                try {
+                    searchdb sdb=new searchdb();
+                    } 
+                  catch (SQLException|ClassNotFoundException ex)
+                {
+                  
+                }
             }
         });
     updatebtn.addActionListener(new ActionListener() {
