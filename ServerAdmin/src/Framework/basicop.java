@@ -98,5 +98,27 @@ public class basicop {
         return col;
     }
     //
-    
+    public void UrlMaker(String dbname)
+    {
+    Url=Url+dbname;
+    }
+    //
+    public String[][] getRowData(ResultSet rs,int MAX) throws SQLException
+    {
+    String[][] temp=null;
+    ResultSetMetaData rst=rs.getMetaData();
+    int col=rst.getColumnCount();
+    int row=MAX;
+    int itr=0;
+    temp=new String[row][col];
+    while(rs.next())
+    {
+    for(int ctr=1;ctr<=col;ctr++)
+    {
+    temp[itr][ctr-1]=rs.getString(ctr);
+    }
+    itr++;
+    }
+    return temp;
+    }
 }

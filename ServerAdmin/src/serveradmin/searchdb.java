@@ -16,9 +16,10 @@ public class searchdb {
     {try{
         basicop b=new basicop();
         b.setUrl("jdbc:mysql://localhost:3306/");
-        ResultSet rs=b.Listenquery("show databases");
+        b.UrlMaker("mysql");
+        ResultSet rs=b.Listenquery("show tables");
         String[] sample=null;
-        String[][] hello={{""}};
+        String[][] hello=b.getRowData(rs, 1000);
         sample=b.getColumnNames(rs);
         b.DisplayTable(hello, sample, "Sampledb");
         }
