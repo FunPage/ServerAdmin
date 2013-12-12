@@ -18,8 +18,9 @@ public class searchdb {
         b.setUrl("jdbc:mysql://localhost:3306/");
         ResultSet rs=b.Listenquery("show databases");
         String[] sample=null;
-        String[][] hello={{"2"}};
+        String[][] hello={{""}};
         sample=b.getColumnNames(rs);
+        b.DisplayTable(hello, sample, "Sampledb");
         }
     catch(Exception e){System.out.println("exception");
     e.printStackTrace();}
