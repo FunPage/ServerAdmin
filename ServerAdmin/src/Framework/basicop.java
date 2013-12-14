@@ -121,4 +121,8 @@ public class basicop {
     }
     return temp;
     }
+    public String selectfromtable(String table)
+    {
+    return "select * from "+table;
+    }
 }
