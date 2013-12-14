@@ -58,7 +58,7 @@ public class ServerAdmin {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-            //  updatedb udb=new updatedb();
+             updatedb udb=new updatedb();
             }
         });
     deletebtn.addActionListener(new ActionListener() {

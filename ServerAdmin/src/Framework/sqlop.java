@@ -39,4 +39,34 @@ public class sqlop {
             
         }
     }
+    public void CreateTable(String dbname,String Tblname,String query,String uname,String pass)
+    {
+      
+      try
+      {
+      String Url="jdbc:mysql://localhost:3306/"+dbname;
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con=DriverManager.getConnection(Url,uname,pass);
+      Statement stmt=con.createStatement();
+      sqlop sp=new sqlop();
+      String statement=sp.StatementCreator(Tblname, query);
+      try
+      {
+      stmt.executeUpdate(statement);
+      System.exit(0);
+      }
+      catch(Exception e)
+      {
+      
+      }
+      }
+      catch(Exception e)
+      {
+      Errorpanel erp=new Errorpanel("Error occured");
+      }
+    }
+    public String StatementCreator(String tblname,String Query)
+    {
+    return "Create Table "+tblname+" ("+Query+")";
+    }
 }
