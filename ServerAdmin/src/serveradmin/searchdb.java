@@ -15,9 +15,9 @@ public class searchdb {
     searchdb() throws SQLException, ClassNotFoundException
     {try{
         basicop b=new basicop();
-        b.setUrl("jdbc:mysql://localhost:3306/");
-        b.UrlMaker("mysql");
-        ResultSet rs=b.Listenquery("show tables");
+        b.setUrl("jdbc:mysql://localhost:3306/SGCTECH");
+        // b.UrlMaker("members");
+        ResultSet rs=b.Listenquery("select * from members");
         String[] sample=null;
         String[][] hello=b.getRowData(rs, 1000);
         sample=b.getColumnNames(rs);
