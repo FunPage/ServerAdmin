@@ -51,7 +51,7 @@ public class createdb extends JFrame
             catch (SQLException ex) 
             {
                System.out.print(ex);
-               Errorpanel errorpanel = new Errorpanel();
+               Errorpanel errorpanel = new Errorpanel("check credientials");
             }
         }
     });

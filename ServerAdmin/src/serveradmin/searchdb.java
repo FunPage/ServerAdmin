@@ -52,7 +52,9 @@ public class searchdb{
              rownames=b.getRowData(rs, 100);
              b.DisplayTable(rownames, colname, dbname);
             }
-            catch(Exception e){}
+            catch(Exception e){
+            Errorpanel er=new Errorpanel("database unknown");
+            }
              
          }
      });

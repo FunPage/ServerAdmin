@@ -16,9 +16,9 @@ import javax.swing.JLabel;
  */
 public class Errorpanel extends JFrame {
     
-    public Errorpanel()
+    public Errorpanel(String s)
     {
-    JLabel l=new JLabel("check credentials");
+    JLabel l=new JLabel(s);
     JButton b=new JButton("Ok");
     l.setBounds(20,30,150,50);
     b.setBounds(80,80,60,50);
