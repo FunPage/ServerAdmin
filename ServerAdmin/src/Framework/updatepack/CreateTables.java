@@ -37,8 +37,8 @@ public class CreateTables {
      label2.setBounds(30,150,200,50);labelpass.setBounds(275,150,150,50);
      Tblname.setBounds(30,210,200,50);rootpass.setBounds(275,210,150,50);
      label3.setBounds(30,270,320,50);
-     ctbquery.setBounds(30,330,200,50);
-     button.setBounds(120,390,90,40);
+     ctbquery.setBounds(30,330,400,50);
+     button.setBounds(185,390,90,40);
      button.addActionListener(new ActionListener() {
 
          @Override
