@@ -54,14 +54,14 @@ public class ServerAdmin {
                 }
             }
         });
-    updatebtn.addActionListener(new ActionListener() {
+ updatebtn.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
              updatedb udb=new updatedb();
             }
         });
-    deletebtn.addActionListener(new ActionListener() {
+ deletebtn.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
