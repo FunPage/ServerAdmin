@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+//deleting the data in a table is not provided will be done only manually through database
 /**
  *
  * @author sathyagriffin
@@ -68,5 +69,28 @@ public class sqlop {
     public String StatementCreator(String tblname,String Query)
     {
     return "Create Table "+tblname+" ("+Query+")";
+    }
+    public String InsertCreator(String tblname,String Query)
+    {
+    return "insert into "+tblname+" values("+Query+")";
+    }
+    public void InsertIntoTable(String dbname,String tblname,String Query,String uname,String pass)
+    {
+    try
+      {
+      String Url="jdbc:mysql://localhost:3306/"+dbname;
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con=DriverManager.getConnection(Url,uname,pass);
+      Statement stmt=con.createStatement();
+      sqlop sp=new sqlop();
+      String statement=sp.InsertCreator(tblname, Query);
+      try
+      {
+      stmt.executeUpdate(statement);
+      System.exit(0);
+      }
+      catch(Exception e){}
+      }
+    catch(Exception e){}
     }
 }

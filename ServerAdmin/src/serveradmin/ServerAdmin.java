@@ -22,7 +22,7 @@ public class ServerAdmin {
     JFrame container=new JFrame("Server Admin v 0.0.1");
     JButton createbtn=new JButton("create");
     JButton searchbtn=new JButton("search");
-    JButton updatebtn=new JButton("Insert");
+    JButton updatebtn=new JButton("update");
     JButton deletebtn=new JButton("delete");
     ServerAdmin()
     {

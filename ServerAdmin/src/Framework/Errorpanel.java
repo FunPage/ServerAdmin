@@ -36,4 +36,6 @@ public class Errorpanel extends JFrame {
     setVisible(true);
     setSize(200,200);
     }
+
+   
 }
