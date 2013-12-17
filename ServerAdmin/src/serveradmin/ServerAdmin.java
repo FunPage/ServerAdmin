@@ -65,7 +65,7 @@ public class ServerAdmin {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-              // deletedb ddb=new deletedb();
+              deletedb ddb=new deletedb();
             }
         });
     container.add(createbtn);

@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  * @author taggo
  */
 public class searchdb{
-    JFrame frame=new JFrame("search window");
+   JFrame frame=new JFrame("search window");
    JTextField database=new JTextField("database name");
    JTextField table=new JTextField("Table name");
    JButton button=new JButton("search");

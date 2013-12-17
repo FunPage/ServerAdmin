@@ -93,4 +93,30 @@ public class sqlop {
       }
     catch(Exception e){}
     }
+    //
+    public String DeleteCreator(String tblname)
+    {
+    return "drop table "+tblname;
+    }
+    //
+    public void DeleteTable(String dbname,String tblname,String uname,String pass)
+    {
+    try
+    {
+      String Url="jdbc:mysql://localhost:3306/"+dbname;
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con=DriverManager.getConnection(Url,uname,pass);
+      Statement stmt=con.createStatement();
+      sqlop sp=new sqlop();
+      String statement=sp.DeleteCreator(tblname);
+      try
+      {
+      stmt.executeUpdate(statement);
+      System.exit(0);
+      }
+      catch(Exception e){}
+    }
+    catch(Exception e)
+    {}
+    }
 }
