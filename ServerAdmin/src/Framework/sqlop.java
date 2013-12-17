@@ -3,10 +3,16 @@
  * and open the template in the editor.
  */
 package Framework;
+import serveradmin.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
 //deleting the data in a table is not provided will be done only manually through database
 /**
  *
@@ -126,5 +132,31 @@ public class sqlop {
     }
     catch(Exception e)
     {}
+    }
+    //
+    public void displayUrl()
+    {
+    final JFrame frame=new JFrame("ip");
+    final JTextField ip=new JTextField("ip");
+    JButton next=new JButton("next");
+    ip.setBounds(30,30,120,40);
+    next.setBounds(30,80,80,40);
+    next.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String address=ip.getText();
+                url="jdbc:mysql://"+address+":3306/";
+                ServerAdmin st=new ServerAdmin();
+                frame.dispose();
+            }
+
+        });
+    frame.add(ip);
+    frame.add(next);
+    frame.setLayout(null);
+    frame.setVisible(true);
+    frame.setSize(200,200);
+   
     }
 }
