@@ -20,7 +20,7 @@ import javax.swing.JTextField;
  */
 public class sqlop {
     //
-   public String url="jdbc:mysql://localhost:3306/";
+   public static String url;
     public void createdbs(String databasename,String uname,String pass) throws SQLException
     {
        
@@ -146,7 +146,7 @@ public class sqlop {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String address=ip.getText();
-                url="jdbc:mysql://"+address+":3306/";
+                sqlop.url="jdbc:mysql://"+address+":3306/";
                 ServerAdmin st=new ServerAdmin();
                 frame.dispose();
             }
