@@ -42,7 +42,10 @@ public class searchdb{
             try{ String dbname=database.getText();
              String tblname=table.getText();
              basicop b=new basicop();
-             b.setUrl("jdbc:mysql://localhost:3306");
+             //
+             sqlop sq=new sqlop();
+             //
+             b.setUrl(sq.url);
              b.UrlMaker(dbname);
              ResultSet rs;
              rs =b.Listenquery(b.selectfromtable(tblname));

@@ -13,11 +13,13 @@ import java.sql.SQLException;
  * @author sathyagriffin
  */
 public class sqlop {
+    //
+   public String url="jdbc:mysql://localhost:3306/";
     public void createdbs(String databasename,String uname,String pass) throws SQLException
     {
        
         try {
-             String url="jdbc:mysql://localhost:3306/";
+           //  String url="jdbc:mysql://localhost:3306/";
              Class.forName("com.mysql.jdbc.Driver");
              Connection con=DriverManager.getConnection(url,uname,pass);
              Statement stmt=con.createStatement();
@@ -40,12 +42,14 @@ public class sqlop {
             
         }
     }
+    //
     public void CreateTable(String dbname,String Tblname,String query,String uname,String pass)
     {
       
       try
       {
-      String Url="jdbc:mysql://localhost:3306/"+dbname;
+     // String Url="jdbc:mysql://localhost:3306/"+dbname;
+          String Url=url+dbname;
       Class.forName("com.mysql.jdbc.Driver");
       Connection con=DriverManager.getConnection(Url,uname,pass);
       Statement stmt=con.createStatement();
@@ -66,19 +70,22 @@ public class sqlop {
       Errorpanel erp=new Errorpanel("Error occured");
       }
     }
+    //
     public String StatementCreator(String tblname,String Query)
     {
     return "Create Table "+tblname+" ("+Query+")";
     }
+    //
     public String InsertCreator(String tblname,String Query)
     {
     return "insert into "+tblname+" values("+Query+")";
     }
+    //
     public void InsertIntoTable(String dbname,String tblname,String Query,String uname,String pass)
     {
     try
       {
-      String Url="jdbc:mysql://localhost:3306/"+dbname;
+      String Url=url+dbname;
       Class.forName("com.mysql.jdbc.Driver");
       Connection con=DriverManager.getConnection(Url,uname,pass);
       Statement stmt=con.createStatement();
@@ -103,7 +110,8 @@ public class sqlop {
     {
     try
     {
-      String Url="jdbc:mysql://localhost:3306/"+dbname;
+     //String Url="jdbc:mysql://localhost:3306/"+dbname;
+        String Url=url+dbname;
       Class.forName("com.mysql.jdbc.Driver");
       Connection con=DriverManager.getConnection(Url,uname,pass);
       Statement stmt=con.createStatement();

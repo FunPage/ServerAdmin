@@ -100,7 +100,7 @@ public class basicop {
     //
     public void UrlMaker(String dbname)
     {
-    Url=Url+"/"+dbname;
+    Url=Url+dbname;
     }
     //
     public String[][] getRowData(ResultSet rs,int MAX) throws SQLException
