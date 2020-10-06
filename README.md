@@ -1,4 +1,4 @@
 ServerAdmin
 ===========
 
-ServerAdmin verision 0.0.1
+ServerAdmin version 0.0.1
